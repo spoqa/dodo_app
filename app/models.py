@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, VARCHAR
+from sqlalchemy import Column, Integer, String, VARCHAR
 from app.database import Base
 
 
@@ -10,8 +10,7 @@ class LMS(Base):
     callback = Column(VARCHAR(25))
     recipent_num = Column(VARCHAR(25))
 
-    def __init__(self, mt_pr, subject, content, callback, recipent_num):
-        self.mt_pr = mt_pr
+    def __init__(self, subject, content, callback, recipent_num):
         self.subject = subject
         self.content = content
         self.callback = callback
@@ -25,8 +24,7 @@ class SMS(Base):
     callback = Column(VARCHAR(25))
     recipent_num = Column(VARCHAR(25))
 
-    def __init__(self, mt_pr, content, callback, recipent_num):
-        self.mt_pr = mt_pr
+    def __init__(self, content, callback, recipent_num):
         self.content = content
         self.callback = callback
         self.recipent_num = recipent_num
