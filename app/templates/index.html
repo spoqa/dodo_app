@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title> test</title>
+  </head>
+  <body>
+	<form action="{{ url_for('messages') }}" method="post" class="send-messages" role="form">
+	  <div class="title">
+		<label>제목</label>
+		<input type="text" size="10" name="title">
+	  </div>
+	  <div class="msg">
+		<label>메시지 내용</label>
+		<textarea name="msg" rows="5" cols="20"></textarea>
+	  </div>
+	  <div class="phone_from">
+		<label>발신자 전화번호</label>
+		<input type="text" size="15" name="phone_from">
+	  </div>
+	  <div class="phone">
+		<label>수신자 전화번호</label>
+		<input type="text" size="15" name="phone">
+		<button type="submit">Send Message</button>
+	  </div>
+	</form>
+  </body>
+</html>
