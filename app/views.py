@@ -14,15 +14,12 @@ def index():
 
 @app.route('/messages', methods=['GET', 'POST'])
 def messages():
-    msg_length = len(request.form['msg'].encode('euc-kr'))
-    if msg_length >= 80:
+    if len(request.form['msg'].encode('euc-kr')) >= 80:
         msg = LMS(request.form['title'], request.form['msg'],
                   request.form['phone_from'], request.form['phone'])
     else:
-        msg = SMS(request.form['msg'],
-                  request.form['phone_from'], request.form['phone'])
-    import pdb; pdb.set_trace()
+        msg = SMS(request.form['msg'], request.form['phone_from'],
+                  request.form['phone'])
     db_session.add(msg)
     db_session.commit()
-    return msg
-
+    return redirect(url_for('index'))
