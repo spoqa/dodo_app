@@ -17,7 +17,6 @@ def index():
     List2 = [dict(id=sms.mt_pr, content=sms.content,
                   callback=sms.callback,
                   recipent_num=sms.recipent_num) for sms in cur2]
-    import pdb; pdb.set_trace()
     return render_template('index.html', List=List, List2=List2)
 
 
