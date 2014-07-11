@@ -1,1 +1,1 @@
-web: gunicorn apptest.views:app
+web: gunicorn testapp.views:app
