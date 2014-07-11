@@ -36,6 +36,7 @@
 		  <tr>
 			<th class="text-center" width="10%">ID</th>
 			<th class="text-center">Title</th>
+			<th class="text-center">Content</th>
 			<th class="text-center">From</th>
 			<th class="text-center">To</th>
 		  </tr>
@@ -55,6 +56,7 @@
 		  {% for lst2 in List2 %}
 		  <tr>
 			<td>{{ lst2.id|safe }}</td>
+			<td>SMS is No title</td>
 			<td>{{ lst2.content }}</td>
 			<td>{{ lst2.callback }}</td>
 			<td>{{ lst2.recipent_num }}</td>
