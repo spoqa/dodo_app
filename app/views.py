@@ -26,25 +26,22 @@ def messages():
     msg = request.args['msg']
     phone_from = request.args['phone_from']
     phone = request.args['phone']
-    import pdb; pdb.set_trace()
     try:
         int(phone_from)
         int(phone)
         resp = 'Success'
-        if len(title) < 1:
+        if len(msg) < 1:
             resp = 'Message is Null'
             raise Exception(ValueError)
     except ValueError:
         resp = 'form phone_from or phone is not integer'
-        """
     else:
         if len(msg.encode('euc-kr')) >= 80:
-            db_msg = LMS(title,msg, phone_from, phone)
+            db_msg = LMS(title, msg, phone_from, phone)
         else:
             db_msg = SMS(msg, phone_from, phone)
         db_session.add(db_msg)
         db_session.commit()
-        """
     finally:
         return jsonify(result=resp)
 
