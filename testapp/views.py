@@ -27,14 +27,15 @@ def messages():
     phone_from = request.args['phone_from']
     phone = request.args['phone']
     try:
-        int(phone_from)
-        int(phone)
-        resp = 'Success'
         if len(msg) < 1:
             resp = 'Message is Null'
             raise Exception(ValueError)
+        else:
+            int(phone_from)
+            int(phone)
+            resp = 'Success'
     except ValueError:
-        resp = 'form phone_from or phone is not integer'
+        resp = 'form phone_from or phone Value Error. numbers only & Not Null'
     else:
         if len(msg.encode('euc-kr')) >= 80:
             db_msg = LMS(title, msg, phone_from, phone)
@@ -44,5 +45,3 @@ def messages():
         db_session.commit()
     finally:
         return jsonify(result=resp)
-
-
