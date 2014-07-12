@@ -7,8 +7,8 @@ sys.path.insert(0, os.getcwd())
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 from logging.config import fileConfig
-from apptest.database import url
-from apptest.models import Base
+from testapp.database import url
+from testapp.models import Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
