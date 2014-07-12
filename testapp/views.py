@@ -9,15 +9,7 @@ from testapp.models import LMS, SMS
 
 @app.route('/')
 def index():
-    cur = db_session.query(LMS)
-    cur2 = db_session.query(SMS)
-    List = [dict(id=lms.mt_pr, subject=lms.subject,
-                 content=lms.content, callback=lms.callback,
-                 recipent_num=lms.recipent_num) for lms in cur]
-    List2 = [dict(id=sms.mt_pr, content=sms.content,
-                  callback=sms.callback,
-                  recipent_num=sms.recipent_num) for sms in cur2]
-    return render_template('index.html', List=List, List2=List2)
+    return render_template('index.html')
 
 
 @app.route('/messages', methods=['GET'])

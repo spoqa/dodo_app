@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<title> test</title>
+	<title>Insert DB APP</title>
   </head>
   <body>
 	<div class="container text-center">
@@ -30,41 +30,8 @@
 		</div>
 		<div class="form-group">
 		  <button class="btn btn-default" type="submit">Send Message</button>
+		</div>
 	  </form>
-	  <table class="table table-bordered text-center">
-		<thead>
-		  <tr>
-			<th class="text-center" width="10%">ID</th>
-			<th class="text-center">Title</th>
-			<th class="text-center">Content</th>
-			<th class="text-center">From</th>
-			<th class="text-center">To</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  {% for lst in List %}
-		  <tr>
-			<td>{{ lst.id|safe }}</td>
-			<td>{{ lst.subject }}</td>
-			<td>{{ lst.content }}</td>
-			<td>{{ lst.callback }}</td>
-			<td>{{ lst.recipent_num }}</td>
-		  </tr>
-		  {% endfor %}
-		</tbody>
-		<tbody>
-		  {% for lst2 in List2 %}
-		  <tr>
-			<td>{{ lst2.id|safe }}</td>
-			<td>SMS is No title</td>
-			<td>{{ lst2.content }}</td>
-			<td>{{ lst2.callback }}</td>
-			<td>{{ lst2.recipent_num }}</td>
-		  </tr>
-		  {% endfor %}
-		</tbody>
-	  </table>
-	  </div>
 	</div>
   </body>
 </html>
