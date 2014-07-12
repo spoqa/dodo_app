@@ -12,7 +12,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/messages', methods=['GET'])
+@app.route('/messages', methods=['POST'])
 def messages():
     title = request.args['title']
     msg = request.args['msg']
