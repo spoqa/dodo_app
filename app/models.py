@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, VARCHAR
-from testapp.database import Base
+from app.database import Base
 
 
 class LMS(Base):

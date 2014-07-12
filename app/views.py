@@ -3,8 +3,8 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 app.config.from_object('config')
 
-from testapp.database import db_session
-from testapp.models import LMS, SMS
+from app.database import db_session
+from app.models import LMS, SMS
 
 
 @app.route('/')
