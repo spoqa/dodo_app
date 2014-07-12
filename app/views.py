@@ -14,10 +14,10 @@ def index():
 
 @app.route('/messages', methods=['POST'])
 def messages():
-    title = request.args['title']
-    msg = request.args['msg']
-    phone_from = request.args['phone_from']
-    phone = request.args['phone']
+    title = request.form['title']
+    msg = request.form['msg']
+    phone_from = request.form['phone_from']
+    phone = request.form['phone']
     try:
         if len(msg) < 1:
             resp = 'Message is Null'
