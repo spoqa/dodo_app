@@ -1,10 +1,18 @@
 from flask import Flask, render_template, request, jsonify
-
-app = Flask(__name__)
-app.config.from_object('config')
+from raven.contrib.flask import Sentry
 
 from app.database import db_session
 from app.models import LMS, SMS
+
+
+app = Flask(__name__)
+app.config.from_object('config')
+sentry = Sentry(app)
+
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db_session.remove()
 
 
 @app.route('/')
