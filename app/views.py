@@ -23,8 +23,8 @@ def messages():
             resp = 'Message is Null'
             raise Exception(ValueError)
         else:
-            int(phone_from)
-            int(phone)
+            # int(phone_from)
+            # int(phone)
             resp = 'Success'
     except ValueError:
         resp = 'form phone_from or phone Value Error. numbers only & Not Null'
